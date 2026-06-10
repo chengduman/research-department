@@ -1,0 +1,51 @@
+name: 📊 周报自动生成
+on:
+  schedule:
+    - cron: '0 18 * * 5'  # 每周五 18:00 UTC
+  workflow_dispatch:  # 可手动触发
+
+jobs:
+  generate-weekly-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Weekly Summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // 获取本周合并的PR和关闭的Issue
+            const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+            
+            const closedIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              since: weekAgo,
+              per_page: 50
+            });
+            
+            const mergedPRs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 50
+            });
+            
+            let report = `# 📊 本周工作简报\n`;
+            report += `**期间：** ${new Date(weekAgo).toLocaleDateString('zh-CN')} ~ ${new Date().toLocaleDateString('zh-CN')}\n\n`;
+            report += `## ✅ 已完成\n`;
+            report += `- 合并PR：${mergedPRs.data.filter(p => p.merged_at > weekAgo).length} 个\n`;
+            report += `- 关闭Issue：${closedIssues.data.length} 个\n\n`;
+            report += `## 📋 进行中\n`;
+            report += `> 请查看项目看板获取实时状态\n`;
+            
+            // 创建新的Issuse作为周报
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📊 周报 - ${new Date().toISOString().slice(0, 10)}`,
+              body: report,
+              labels: ['📋 周报']
+            });
