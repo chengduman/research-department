@@ -1,0 +1,53 @@
+# 调研任务（一级审核）
+name: 🎯 调研任务
+description: 提交新的调研任务或指派工作
+title: "[调研] "
+labels: ["调研任务", "待排期"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 调研任务指派
+        由 CEO/董事长 下达，张明远部长负责排期分配
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - 🔴 P0 - 紧急（48h内出初稿）
+        - 🟡 P1 - 重要（本周内完成）
+        - 🟢 P2 - 常规（按排期）
+        - 🔵 P3 - 待定
+    validations:
+      required: true
+  - type: textarea
+    id: topic
+    attributes:
+      label: 调研主题
+      description: 请清晰描述调研目标和范围
+      placeholder: 例如：全球PEN在航空航天领域的应用现状与趋势
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: 具体要求
+      placeholder: 需要的交付物、格式要求、数据来源偏好等
+  - type: dropdown
+    id: assign
+    attributes:
+      label: 指派给
+      description: CEO指定负责人，或由张明远部长自行分配
+      options:
+        - 张明远（部长分配）
+        - 李雪晴（高级研究员）
+        - 王思远（研究员）
+        - 陈雨桐（研究员）
+        - 刘浩然（助理研究员）
+        - 周雅文（助理研究员）
+  - type: input
+    id: deadline
+    attributes:
+      label: 截止日期
+      placeholder: YYYY-MM-DD
