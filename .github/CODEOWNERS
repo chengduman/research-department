@@ -1,0 +1,4 @@
+# CODEOWNERS — 调研部
+# 张明远部长为默认审核人
+
+* @chengduman  # 设为组织Owner，实际部长为审批人
