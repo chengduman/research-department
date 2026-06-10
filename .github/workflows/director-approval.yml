@@ -1,0 +1,45 @@
+name: 🚀 部长审批工作流
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+  issue_comment:
+    types: [created]
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign PR to Department Head
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // 部长自动被指派为PR审核人
+            const pr = context.payload.pull_request;
+            if (pr) {
+              // 根据仓库名称自动分配部长
+              const repo = context.repo.repo;
+              const directors = {
+                'research-department': 'chengduman',    // 张明远
+                'analysis-department': 'chengduman',    // 赵文博
+                'tech-department': 'chengduman',        // 吴景辉
+                'creative-department': 'chengduman',    // 方文君
+                'intelligence-department': 'chengduman', // 马俊伟
+                'operations-department': 'chengduman'   // 徐明辉
+              };
+              const director = directors[repo];
+              if (director) {
+                github.rest.pulls.requestReviewers({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  reviewers: [director]
+                });
+                // 添加待审核标签
+                github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['👀 待部长审核']
+                });
+              }
+            }
