@@ -1,0 +1,74 @@
+# 中普咨询 — GitHub 组织赋能配置
+
+# 为每个部门仓库配置 Project Board（看板）列
+# 创建后可在 GitHub 网页端调整
+
+project_boards:
+  - name: "📋 任务看板"
+    columns:
+      - "📥 待办"        # Backlog
+      - "🎯 进行中"      # In Progress
+      - "👀 部长审核中"   # Under Review (由部长处理)
+      - "✅ 已完成"      # Done
+    automation:
+      - trigger: "issue_opened"
+        action: "move_to_column"
+        column: "📥 待办"
+      - trigger: "issue_labeled"
+        label: "进行中"
+        action: "move_to_column"
+        column: "🎯 进行中"
+      - trigger: "pull_request_opened"
+        action: "move_to_column"
+        column: "👀 部长审核中"
+      - trigger: "pull_request_merged"
+        action: "move_to_column"
+        column: "✅ 已完成"
+      - trigger: "issue_closed"
+        action: "move_to_column"
+        column: "✅ 已完成"
+
+# 部长职责清单 (各部长须遵循)
+director_responsibilities:
+  research:
+    director: "张明远"
+    duties:
+      - 审核所有调研报告的内容质量和逻辑完整性（一级审核）
+      - 分派调研任务，把控调研进度
+      - 把控调研方法论和研究深度
+      - 每周向CEO汇报调研进展
+  analysis:
+    director: "赵文博"
+    duties:
+      - 审核数据分析模型的科学性和准确性（二级审核）
+      - 把控数据可视化质量和图表规范
+      - 建立和维护公司分析框架体系
+      - 确保数据分析结论可复现
+  tech:
+    director: "吴景辉"
+    duties:
+      - 审核技术方案架构设计和代码质量
+      - 把控开发排期和资源分配
+      - 评估新技术引入的可行性和风险
+      - 保障系统稳定运行
+  creative:
+    director: "方文君"
+    duties:
+      - 审核所有设计方案的视觉品质（品牌规范一致性）
+      - 统一公司视觉体系和设计标准
+      - 分配设计资源，把控交付节奏
+      - 跟踪设计趋势，提升团队创意水平
+  intelligence:
+    director: "马俊伟"
+    duties:
+      - 审核情报产品的准确性和时效性（三级审核）
+      - 确定监控重点和情报方向
+      - 重大情报的研判与呈报
+      - 确保情报来源可信、覆盖全面
+  operations:
+    director: "徐明辉"
+    duties:
+      - 审核项目流程规范性和交付标准（四级审核）
+      - 项目排期管理和资源协调
+      - 跨部门沟通枢纽
+      - 制度执行监督与流程优化
