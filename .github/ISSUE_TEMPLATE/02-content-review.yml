@@ -1,0 +1,41 @@
+# 报告审核请求
+name: 📝 报告内容审核
+description: 调研报告初稿提交审核（一级审核·张明远部长）
+title: "[审核] "
+labels: ["内容审核"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 报告内容审核
+        提交人：________    日期：________
+  - type: input
+    id: report-title
+    attributes:
+      label: 报告标题
+      placeholder: 请输入报告名称
+    validations:
+      required: true
+  - type: textarea
+    id: key-points
+    attributes:
+      label: 核心发现（摘要）
+      placeholder: 简述报告的核心结论，方便部长快速掌握要点
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 审核清单
+      options:
+        - label: 数据结构完整（摘要→正文→结论→建议）
+        - label: 逻辑链条清晰，论据支撑结论
+        - label: 无主观臆断，每项结论有数据/来源支撑
+        - label: 语言书面规范，无口语化表达
+        - label: 关键信息已交叉验证（≥2个独立来源）
+  - type: textarea
+    id: notes
+    attributes:
+      label: 提请部长注意的问题
+      placeholder: 如有拿不准的结论或需要特别关注的点，请在此说明
