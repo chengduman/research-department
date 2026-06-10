@@ -1,0 +1,43 @@
+name: 📋 Issue 自动标签与分派
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label-and-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-label and assign
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+            const repo = context.repo.repo;
+            
+            // 根据仓库设置标签
+            const deptLabels = {
+              'research-department': ['🔍 调研部'],
+              'analysis-department': ['📊 分析部'],
+              'tech-department': ['⚙️ 技术部'],
+              'creative-department': ['🎨 创意部'],
+              'intelligence-department': ['📡 情报部'],
+              'operations-department': ['🔄 运营部']
+            };
+            
+            const labels = deptLabels[repo] || [];
+            if (labels.length > 0) {
+              github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labels
+              });
+            }
+            
+            // 标记到项目看板
+            github.rest.projects.createCard({
+              column_id: process.env.PROJECT_COLUMN_ID || '',
+              content_id: issue.id,
+              content_type: 'Issue'
+            });
