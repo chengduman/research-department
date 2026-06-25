@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>算力共享产业链全景</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0B1D3A;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  padding: 12px;
+  color: #fff;
+  width: 900px;
+}
+h1 { text-align:center; font-size:18px; color:#C4A45A; margin-bottom:10px; letter-spacing:1px; }
+
+.chain-flow {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+.chain-node {
+  flex: 1;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(26,55,90,0.9) 0%, rgba(20,42,72,0.9) 100%);
+  border: 1px solid #2A4A72;
+  border-radius: 6px;
+  padding: 8px 3px;
+}
+.chain-node .header {
+  font-size: 10px;
+  font-weight: 600;
+  color: #C4A45A;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #2A4A72;
+  margin-bottom: 4px;
+}
+.chain-node .items {
+  font-size: 8px;
+  color: #B8C8E0;
+  line-height: 1.5;
+}
+.chain-arrow {
+  color: #4A7AB5;
+  font-size: 14px;
+  line-height: 50px;
+  flex-shrink: 0;
+  width: 10px;
+  text-align: center;
+}
+
+/* Value distribution */
+.vrow {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+.vitem {
+  flex: 1;
+  text-align: center;
+  padding: 6px 2px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 5px;
+  border: 1px solid rgba(196,164,90,0.12);
+}
+.vitem .l { font-size: 8px; color: #8899BB; }
+.vitem .n { font-size: 14px; color: #C4A45A; font-weight: 700; }
+.vitem .s { font-size: 7px; color: #667799; }
+
+.vlabel {
+  font-size: 10px;
+  color: #8899BB;
+  margin-bottom: 4px;
+}
+</style>
+</head>
+<body>
+
+<h1>🔗 个人闲置算力出租 · 产业链全景图</h1>
+
+<div class="chain-flow">
+  <div class="chain-node">
+    <div class="header">🏭 硬件供给</div>
+    <div class="items">NVIDIA<br>AMD/Intel<br>个人持有者<br>小型DC<br>网吧/矿场</div>
+  </div>
+  <div class="chain-arrow">→</div>
+  <div class="chain-node">
+    <div class="header">🌐 平台/协议</div>
+    <div class="items">Vast.ai/RunPod<br>Akash/Render<br>io.net/Salad<br>Golem/ NiceHash</div>
+  </div>
+  <div class="chain-arrow">→</div>
+  <div class="chain-node">
+    <div class="header">🔗 算力聚合</div>
+    <div class="items">算力运营商<br>汇集再销售<br>FluidStack<br>标准化封装</div>
+  </div>
+  <div class="chain-arrow">→</div>
+  <div class="chain-node">
+    <div class="header">⚙️ 调度分发</div>
+    <div class="items">Docker/K8s<br>Slurm<br>智能合约<br>GPU虚拟化</div>
+  </div>
+  <div class="chain-arrow">→</div>
+  <div class="chain-node">
+    <div class="header">👥 终端需求</div>
+    <div class="items">AI创业/科研<br>渲染工作室<br>Web3项目<br>量化交易</div>
+  </div>
+  <div class="chain-arrow">→</div>
+  <div class="chain-node">
+    <div class="header">🛡️ 配套服务</div>
+    <div class="items">保险/担保<br>硬件融资<br>电力优化<br>合规咨询</div>
+  </div>
+</div>
+
+<div class="vlabel">📊 价值分配 — RTX 4090 月租金$300</div>
+<div class="vrow">
+  <div class="vitem"><div class="l">持有者</div><div class="n">75-85%</div><div class="s">$225-255</div></div>
+  <div class="vitem"><div class="l">平台方</div><div class="n">15-25%</div><div class="s">$45-75</div></div>
+  <div class="vitem"><div class="l">电力</div><div class="n">5-10%</div><div class="s">$15-30</div></div>
+  <div class="vitem"><div class="l">折旧</div><div class="n">15-20%</div><div class="s">$45-60</div></div>
+  <div class="vitem"><div class="l">净收益</div><div class="n">45-60%</div><div class="s">$135-180</div></div>
+</div>
+
+<div style="margin-top:8px; text-align:center; font-size:8px; color:#3A5A72;">中普咨询 · 个人闲置算力出租市场调研报告</div>
+
+</body>
+</html>

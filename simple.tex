@@ -1,0 +1,27 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\ctexset{
+  section/format = {\heiti\zihao{3}},
+  subsection/format = {\kaishu\zihao{3}\bfseries},
+}
+\usepackage{geometry}
+\geometry{top=37mm,bottom=35mm,left=28mm,right=26mm}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\usepackage{longtable,booktabs}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\kaishu\zihao{6} 中普咨询 | 内部报告 | 机密}
+\fancyfoot[C]{\thepage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\setCJKmainfont{仿宋}
+\setCJKsansfont{黑体}
+\setCJKmonofont{楷体}
+$if(title)$\title{$title$}$endif$
+$if(date)$\date{$date$}$endif$
+\begin{document}
+$if(title)$\maketitle$endif$
+$if(toc)$\tableofcontents\newpage$endif$
+$body$
+\end{document}

@@ -1,0 +1,169 @@
+/* GB/T 9704-2012 PDF Stylesheet for WeasyPrint */
+@page {
+  size: A4;
+  margin: 37mm 26mm 35mm 28mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'SimSun', serif;
+    font-size: 9pt;
+    color: #999;
+  }
+}
+
+body {
+  font-family: 'FangSong', '仿宋', 'SimFang', serif;
+  font-size: 16pt;
+  line-height: 28pt;
+  color: #000;
+}
+
+/* Cover page - first page */
+@page cover {
+  margin: 0;
+  @bottom-center { content: none; }
+}
+
+/* --- Title / H1 --- */
+h1 {
+  font-family: 'SimSun', '宋体', serif;
+  font-size: 22pt;
+  font-weight: bold;
+  text-align: center;
+  line-height: 28pt;
+  page-break-before: always;
+}
+
+/* --- Chapter H2 --- */
+h2 {
+  font-family: 'SimHei', '黑体', sans-serif;
+  font-size: 16pt;
+  font-weight: normal;
+  text-align: left;
+  line-height: 28pt;
+  margin-top: 12pt;
+  margin-bottom: 6pt;
+}
+
+/* --- Section H3 --- */
+h3 {
+  font-family: 'KaiTi', '楷体', serif;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: left;
+  line-height: 28pt;
+  margin-top: 8pt;
+  margin-bottom: 4pt;
+}
+
+/* --- Subsection H4 --- */
+h4 {
+  font-family: 'FangSong', '仿宋', 'SimFang', serif;
+  font-size: 16pt;
+  font-weight: bold;
+  line-height: 28pt;
+}
+
+/* --- Body --- */
+p {
+  font-family: 'FangSong', '仿宋', 'SimFang', serif;
+  font-size: 16pt;
+  line-height: 28pt;
+  text-indent: 2em;
+  margin: 0;
+  text-align: justify;
+}
+
+/* First paragraph after heading, and non-indented paragraphs */
+h2 + p, h3 + p, h4 + p,
+p.no-indent {
+  text-indent: 0;
+}
+
+/* --- Tables --- */
+table {
+  font-size: 10.5pt;
+  line-height: 16pt;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8pt 0;
+  page-break-inside: avoid;
+}
+
+th {
+  font-family: 'SimHei', '黑体', sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  background-color: #E8E8E8;
+  border: 0.5pt solid #000;
+  padding: 3pt 4pt;
+  text-align: center;
+}
+
+td {
+  font-family: 'FangSong', '仿宋', 'SimFang', serif;
+  font-size: 10.5pt;
+  border: 0.5pt solid #000;
+  padding: 2pt 4pt;
+  text-align: left;
+}
+
+/* --- Code blocks / ASCII art --- */
+pre, code {
+  font-family: 'SimHei', '黑体', monospace;
+  font-size: 9pt;
+  line-height: 14pt;
+  background: #f5f5f5;
+  padding: 4pt 8pt;
+  border: 0.5pt solid #ddd;
+  white-space: pre-wrap;
+  text-indent: 0;
+}
+
+/* --- Horizontal rules --- */
+hr {
+  border: none;
+  border-top: 0.5pt solid #ccc;
+  margin: 12pt 0;
+}
+
+/* --- Bold text --- */
+strong {
+  font-weight: bold;
+}
+
+/* --- Blockquote --- */
+blockquote {
+  font-family: 'KaiTi', '楷体', serif;
+  font-size: 14pt;
+  border-left: 3pt solid #0B1D3A;
+  padding-left: 12pt;
+  margin: 8pt 0;
+  color: #333;
+  text-indent: 0;
+}
+
+/* --- Lists --- */
+ul, ol {
+  font-family: 'FangSong', '仿宋', 'SimFang', serif;
+  font-size: 16pt;
+  line-height: 28pt;
+  padding-left: 2em;
+}
+
+li {
+  margin: 2pt 0;
+}
+
+/* Page break marker */
+.pagebreak {
+  page-break-before: always;
+}
+
+/* TOC styling */
+nav#TOC {
+  page-break-after: always;
+}
+nav#TOC a {
+  color: #000;
+  text-decoration: none;
+}

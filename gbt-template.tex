@@ -1,0 +1,65 @@
+% GB/T 9704-2012 LaTeX Template for pandoc + xelatex
+\documentclass[UTF8,a4paper]{ctexart}
+
+% --- Page setup (GB/T 9704-2012) ---
+\usepackage{geometry}
+\geometry{top=37mm, bottom=35mm, left=28mm, right=26mm}
+
+% --- Fonts ---
+\setCJKmainfont{仿宋}
+\setCJKsansfont{黑体}
+\setCJKmonofont{楷体}
+\setmainfont{Times New Roman}
+
+% --- Title format ---
+\CTEXsetup[name={第,章},number={\arabic{chapter}},format={\centering\heiti\sanhao}]{chapter}
+\CTEXsetup[name={,},number={\arabic{section}},format={\heiti\sanhao}]{section}
+\CTEXsetup[name={,},number={\arabic{subsection}},format={\kaishu\sanhao}]{subsection}
+
+% --- Paragraph formatting ---
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1.5}  % ~1.5x for 16pt font
+
+% --- Headers/footers ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\kaishu\small 中普咨询 | 内部研究报告 | 机密}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- Table formatting ---
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{colortbl}
+\renewcommand{\arraystretch}{1.2}
+
+% --- Hyperlinks ---
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$author$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+\tableofcontents
+\newpage
+$endif$
+
+$body$
+\end{document}
