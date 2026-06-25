@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=900, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1D3A;font-family:'Microsoft YaHei','PingFang SC',sans-serif;padding:16px;width:880px}
+.title{color:#C4A45A;font-size:16px;font-weight:700;text-align:center;margin-bottom:14px;letter-spacing:2px}
+.chain{display:flex;gap:2px;align-items:stretch}
+.node{flex:1;text-align:center;background:linear-gradient(180deg,rgba(26,55,90,0.95),rgba(20,42,72,0.95));border:1px solid #2A4A72;border-radius:8px;padding:8px 3px;min-width:110px}
+.node .h{font-size:10px;font-weight:700;color:#C4A45A;border-bottom:1px solid #2A4A72;padding-bottom:5px;margin-bottom:5px}
+.node .items{font-size:8px;color:#B8C8E0;line-height:1.55}
+.arrow{color:#4A7AB5;font-size:18px;line-height:60px;flex-shrink:0;width:8px;text-align:center}
+.vrow{display:flex;gap:5px;margin-top:12px}
+.vitem{flex:1;text-align:center;background:rgba(196,164,90,0.08);border:1px solid rgba(196,164,90,0.2);border-radius:6px;padding:6px 2px}
+.vitem .l{font-size:8px;color:#8899BB;margin-bottom:2px}
+.vitem .n{font-size:11px;font-weight:700;color:#C4A45A}
+.vitem .s{font-size:8px;color:#B8C8E0}
+.legend{display:flex;gap:16px;justify-content:center;margin-top:10px;font-size:8px;color:#8899BB}
+.legend span{margin:0 4px}
+.legend .g{color:#4A7AB5}
+.legend .r{color:#C4A45A}
+</style>
+</head>
+<body>
+<div class="title">聚砜（PSU/PES/PPSU）产业链全景图</div>
+<div class="chain">
+  <div class="node">
+    <div class="h">🛢️ 上游原料</div>
+    <div class="items">双酚A (BPA)<br>4,4'-二氯二苯砜<br>4,4'-二羟基二苯砜<br>4,4'-联苯二酚<br>碳酸钾/钠</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="node">
+    <div class="h">⚗️ 聚合生产</div>
+    <div class="items">亲核缩聚反应<br>DMSO/环丁砜溶剂<br>批次法·连续法中试<br>Syensqo/BASF/Sumitomo<br>浩然特塑/砚津</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="node">
+    <div class="h">🧪 纯化造粒</div>
+    <div class="items">沉淀分离<br>多级逆流洗涤<br>真空干燥<br>双螺杆造粒<br>溶剂回收循环</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="node">
+    <div class="h">📦 树脂分销</div>
+    <div class="items">PSU树脂 ¥18-22万/t<br>PES树脂 ¥22-28万/t<br>PPSU树脂 ¥35-45万/t<br>进口依赖度75%</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="node">
+    <div class="h">🏭 制品加工</div>
+    <div class="items">注塑成型<br>挤出成型<br>中空纤维纺丝<br>加工温度300-390℃<br>掺混改性</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="node">
+    <div class="h">🎯 终端应用</div>
+    <div class="items">水处理膜 (UF/MF/RO)<br>血液透析器壳体<br>航空内饰件<br>电子连接器<br>医疗器械消毒盒</div>
+  </div>
+</div>
+<div class="vrow">
+  <div class="vitem"><div class="l">毛利率</div><div class="n">15-45%</div><div class="s">上游单体</div></div>
+  <div class="vitem"><div class="l">毛利率</div><div class="n">35-52%</div><div class="s">聚合生产</div></div>
+  <div class="vitem"><div class="l">毛利率</div><div class="n">20-30%</div><div class="s">分销/改性</div></div>
+  <div class="vitem"><div class="l">毛利率</div><div class="n">15-25%</div><div class="s">制品加工</div></div>
+  <div class="vitem"><div class="l">毛利率</div><div class="n">50-70%</div><div class="s">终端产品</div></div>
+</div>
+<div class="legend"><span>全球市场规模：$30-35亿（2025E）</span> | <span class="g">中国市场：1.8-2.2万吨/年</span> | <span class="r">CAGR：6.8-8.2%</span> | <span>中国自给率＜25%</span></div>
+</body>
+</html>

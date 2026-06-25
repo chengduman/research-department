@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=900, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1D3A;font-family:'Microsoft YaHei','PingFang SC',sans-serif;padding:14px;width:880px}
+.t{color:#C4A45A;font-size:15px;font-weight:700;text-align:center;margin-bottom:10px;letter-spacing:1px}
+.flow{display:flex;flex-direction:column;gap:6px}
+.stage{border-radius:8px;padding:10px 14px;border:1px solid #2A4A72;background:linear-gradient(135deg,rgba(26,55,90,0.9),rgba(20,42,72,0.9))}
+.stage .sh{font-size:11px;font-weight:700;color:#C4A45A;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.stage .sh .num{background:#C4A45A;color:#0B1D3A;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.stage .sbody{display:flex;gap:10px}
+.stage .sbody .left{flex:1;font-size:8.5px;color:#B8C8E0;line-height:1.55}
+.stage .sbody .right{flex:2;display:flex;flex-wrap:wrap;gap:3px}
+.tag{display:inline-block;background:rgba(196,164,90,0.12);border:1px solid rgba(196,164,90,0.25);border-radius:4px;padding:2px 6px;font-size:7.5px;color:#C4A45A}
+.tag2{display:inline-block;background:rgba(74,122,181,0.12);border:1px solid rgba(74,122,181,0.25);border-radius:4px;padding:2px 6px;font-size:7.5px;color:#6A9AD5}
+.arrow-down{text-align:center;color:#4A7AB5;font-size:14px}
+.bottom{display:flex;gap:10px;margin-top:8px}
+.bcard{flex:1;text-align:center;background:rgba(196,164,90,0.05);border:1px solid rgba(196,164,90,0.15);border-radius:6px;padding:6px}
+.bcard .bl{font-size:7.5px;color:#8899BB}
+.bcard .bn{font-size:10px;color:#C4A45A;font-weight:700}
+</style>
+</head>
+<body>
+<div class="t">聚砜树脂生产全流程与关键控制点</div>
+<div class="flow">
+  <div class="stage">
+    <div class="sh"><span class="num">1</span>工段一：原料预处理</div>
+    <div class="sbody">
+      <div class="left">BPA/BPS/BP<br>→ 真空干燥 120-150℃<br>DCDPS → 重结晶纯化<br>K₂CO₃ → 200-250℃干燥<br>溶剂 → 分子筛脱水<br>目标：水分≤50ppm</div>
+      <div class="right">
+        <span class="tag">CPP: 单体纯度≥99.5%</span><span class="tag">CPP: 水分≤50ppm</span>
+        <span class="tag2">设备: 真空烘箱</span><span class="tag2">设备: 分子筛塔</span>
+        <span class="tag2">能耗: 8%电/12%热</span>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-down">↓</div>
+  <div class="stage">
+    <div class="sh"><span class="num">2</span>工段二：聚合反应 · 核心工段</div>
+    <div class="sbody">
+      <div class="left">成盐：BPA+K₂CO₃ → BPA-K₂<br>140-150℃/2-3h/甲苯带水<br>聚合：BPA-K₂+DCDPS<br>165-190℃/4-8h<br>封端：180-190℃/30-60min</div>
+      <div class="right">
+        <span class="tag">CPP: 等摩尔比±0.001</span><span class="tag">CPP: 温度±2℃</span>
+        <span class="tag">CPP: O₂＜10ppm</span><span class="tag">CPP: GPC Mn目标</span>
+        <span class="tag2">设备: 10m³ 316L釜</span><span class="tag2">设备: Hastelloy C276</span>
+        <span class="tag2">造价: ¥350-450万/台</span><span class="tag2">能耗: 25%电/35%热</span>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-down">↓</div>
+  <div class="stage">
+    <div class="sh"><span class="num">3</span>工段三：分离纯化</div>
+    <div class="sbody">
+      <div class="left">稀释→过滤除KCl<br>水沉淀（8:1体积比）<br>卧式离心分离<br>3-5级逆流热水洗涤<br>60-90℃梯度升温<br>热水萃取脱低聚物</div>
+      <div class="right">
+        <span class="tag">CPP: 沉淀温度35±5℃</span><span class="tag">CPP: 水:溶液=8:1</span>
+        <span class="tag">CQA: 残留DMSO＜100ppm</span><span class="tag">CQA: Cl⁻＜50ppm</span>
+        <span class="tag2">设备: 离心机+洗涤釜</span><span class="tag2">能耗: 15%电/20%热</span>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-down">↓</div>
+  <div class="stage">
+    <div class="sh"><span class="num">4</span>工段四：干燥造粒</div>
+    <div class="sbody">
+      <div class="left">离心脱水→含水15-25%<br>流化床120-140℃→含水＜3%<br>真空旋转干燥160-180℃<br>双螺杆造粒280-340℃<br>N₂保护防氧化</div>
+      <div class="right">
+        <span class="tag">CPP: 真空干燥170±10℃</span><span class="tag">CQA: 水分＜0.1%</span>
+        <span class="tag">CQA: 黄度指数达标</span><span class="tag">CPP: 造粒O₂＜100ppm</span>
+        <span class="tag2">设备: 流化床+双锥+双螺杆</span><span class="tag2">能耗: 22%电/18%热</span>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-down">↓</div>
+  <div class="stage" style="border-color:rgba(196,164,90,0.4);background:linear-gradient(135deg,rgba(30,60,50,0.9),rgba(20,50,40,0.9))">
+    <div class="sh"><span class="num">5</span>工段五：溶剂回收 · 经济闭环</div>
+    <div class="sbody">
+      <div class="left">KCl滤液+沉淀母液+洗涤水<br>→ 粗蒸馏脱水（常压100-102℃）<br>→ DMSO精馏（减压5-10kPa）<br>→ 分子筛干燥（4A/13X）<br>回收DMSO：≥99.9%, H₂O＜50ppm</div>
+      <div class="right">
+        <span class="tag">CPP: 回流比3:1</span><span class="tag">CPP: 回收纯度≥99.9%</span>
+        <span class="tag">回收率: 93-96%</span><span class="tag">新溶剂补: 150-200kg/t</span>
+        <span class="tag2">设备: 蒸馏塔+精馏塔</span><span class="tag2">能耗: 30%电/15%热</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bcard"><div class="bl">PSU完全成本</div><div class="bn">≈¥7.3万/吨</div></div>
+  <div class="bcard"><div class="bl">PSU售价</div><div class="bn">¥18-22万/吨</div></div>
+  <div class="bcard"><div class="bl">毛利率</div><div class="bn">59-67%</div></div>
+  <div class="bcard"><div class="bl">吨产品能耗</div><div class="bn">640-815 kgce</div></div>
+  <div class="bcard"><div class="bl">5000t/a总投资</div><div class="bn">≈¥1.6亿</div></div>
+</div>
+</body>
+</html>
