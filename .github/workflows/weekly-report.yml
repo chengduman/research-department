@@ -3,7 +3,10 @@ on:
   schedule:
     - cron: '0 18 * * 5'  # 每周五 18:00 UTC
   workflow_dispatch:  # 可手动触发
-
+permissions:
+  issues: write
+  pull-requests: read
+  contents: read
 jobs:
   generate-weekly-report:
     runs-on: ubuntu-latest
